@@ -17,8 +17,11 @@ namespace _Scripts.ScreenLogic
       gameObject.SetActive(true);
       Curtain.alpha = 1;
     }
-    
-    public void Hide() => StartCoroutine(DoFadeIn());
+
+    public void Hide()
+    { 
+      StartCoroutine(DoFadeIn());
+    }
     
     private IEnumerator DoFadeIn()
     {

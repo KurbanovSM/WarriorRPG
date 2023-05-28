@@ -5,7 +5,8 @@ namespace _Scripts.Infrastructure
 {
     public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
     {
-        [SerializeField] private LoadingCurtain _loadingCurtain;
+        [SerializeField] 
+        private LoadingCurtain _loadingCurtain;
         
         private Game _game;
 

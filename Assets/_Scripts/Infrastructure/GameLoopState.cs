@@ -6,7 +6,7 @@
 
         public GameLoopState(GameStateMachine gameStateMachine)
         {
-            this._gameStateMachine = gameStateMachine;
+            _gameStateMachine = gameStateMachine;
         }
 
         public void Exit()
