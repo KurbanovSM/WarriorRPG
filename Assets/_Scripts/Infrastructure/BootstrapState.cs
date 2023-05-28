@@ -16,7 +16,6 @@ namespace _Scripts.Infrastructure
             _sceneLoader = sceneLoader;
         }
 
-
         public void Enter()
         {
             _sceneLoader.Load(Initial, EnterLoadLevel);
