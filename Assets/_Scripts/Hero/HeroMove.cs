@@ -22,13 +22,6 @@ namespace _Scripts.Hero
         private void Start()
         {
             _camera = Camera.main;
-
-            SetCameraFollow();
-        }
-
-        private void SetCameraFollow()
-        {
-            _camera.GetComponent<CameraFollow>().SetFollow(gameObject);
         }
 
         private void Update()

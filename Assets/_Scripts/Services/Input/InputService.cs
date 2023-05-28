@@ -15,7 +15,7 @@ namespace _Scripts.Services.Input
             return SimpleInput.GetButtonUp(Fire);
         }
         
-        protected static Vector2 GetSimpleAxis()
+        protected static Vector2 GetJoystickAxis()
         {
             return new Vector2(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));
         }

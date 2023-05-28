@@ -8,7 +8,7 @@ namespace _Scripts.Services.Input
         {
             get
             {
-                var axis = GetSimpleAxis();
+                var axis = GetJoystickAxis();
 
                 if (axis == Vector2.zero)
                 {
