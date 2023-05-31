@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts.Hero.Animations
 {
@@ -21,24 +22,30 @@ namespace _Scripts.Hero.Animations
    
     public AnimatorState State { get; private set; }
     
-    public Animator Animator;
-    public CharacterController CharacterController;
+    private Animator _animator;
+    [SerializeField] private CharacterController _characterController;
+
+    private void Awake()
+    {
+      _characterController = GetComponent<CharacterController>();
+      _animator = GetComponentInChildren<Animator>();
+    }
 
     private void Update()
     { 
-      Animator.SetFloat(MoveHash, CharacterController.velocity.magnitude, 0.1f, Time.deltaTime);
+      _animator.SetFloat(MoveHash, _characterController.velocity.magnitude, 0, Time.deltaTime);
     }
 
     public bool IsAttacking => State == AnimatorState.Attack;
     
 
-    public void PlayHit() => Animator.SetTrigger(HitHash);
+    public void PlayHit() => _animator.SetTrigger(HitHash);
     
-    public void PlayAttack() => Animator.SetTrigger(AttackHash);
+    public void PlayAttack() => _animator.SetTrigger(AttackHash);
 
-    public void PlayDeath() =>  Animator.SetTrigger(DieHash);
+    public void PlayDeath() =>  _animator.SetTrigger(DieHash);
 
-    public void ResetToIdle() => Animator.Play(_idleStateHash, -1);
+    public void ResetToIdle() => _animator.Play(_idleStateHash, -1);
     
     public void EnteredState(int stateHash)
     {
